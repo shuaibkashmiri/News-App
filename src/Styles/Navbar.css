@@ -1,17 +1,65 @@
-.navbar{
-    >ul{
-        width: 40%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 30px;
-    padding: 1%;
->li{
-    list-style: none;
-    >a{
-        text-decoration: none;
-        color: white;
-
-    }
+* {
+  margin: 0;
+  padding: 0%;
 }
-    }
+.navbar {
+  background: #222; /* Dark background same as Footer */
+  padding: 15px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white; /* White text */
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.navbar a:hover {
+  color: #007bff; /* Yellow hover effect like Footer */
+  transform: scale(1.1);
+}
+
+/* Active link underline effect */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
+  background: #007bff;
+  transition: all 0.3s;
+  transform: translateX(-50%);
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Responsive Navbar */
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar a {
+    padding: 10px;
+  }
 }
